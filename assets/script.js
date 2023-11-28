@@ -22,22 +22,22 @@ const slides = [
 const imgbanner = document.querySelector("img.banner-img");
 const btnarrowright = document.querySelector(".arrow_right");
 const btnarrowleft = document.querySelector(".arrow_left");
-const tagLine = document.querySelector("#banner p")
-const dots =document.querySelectorAll(".dot")
+const tagLine = document.querySelector("#banner p");
+const dots =document.querySelectorAll(".dot");
 let i = 0;
 
 btnarrowright.addEventListener("click", () => { // Écouteur d'événement du click de la flèche droite
  i= (i === slides.length -1  ? i=0 : i+1);// si i === taille tableau -1 --> i=0 sinon i+1(un tableau ce li à partir de 0 donc -1 pour valeur réelle)
  imgbanner.src = `./assets/images/slideshow/${slides[i].image}`;// met à jour l'image de la bannière 
  tagLine.innerHTML = slides[i].tagLine;// met à jour la tagline avec la valeur correspondant à l'image
- dots.forEach(dot => dot.classList.remove("dot_selected"))// pour chaque point, exécuter fonction dot qui enlève la classe dot_selected
+ dots.forEach(dot => dot.classList.remove("dot_selected"));// pour chaque point, exécuter fonction dot qui enlève la classe dot_selected
  dots[i].classList.add('dot_selected'); // ajoute la classe dot-selected à la valeur de i correspondant à l'image et à la tagline
 });
 
 btnarrowleft.addEventListener("click", () => { // ecouteur d'événement du click de la fleche gauche
-  i = (i === 0 ? i = slides.length -1 : i - 1 ) //si i===0 --> i = taille tableau - 1 sinon i - 1   (? = condition  true :false )
+  i = (i === 0 ? i = slides.length -1 : i - 1 ); //si i===0 --> i = taille tableau - 1 sinon i - 1   (? = condition  true :false )
   imgbanner.src = `./assets/images/slideshow/${slides[i].image}`; // met à jour l'image de la bannière 
   tagLine.innerHTML = slides[i].tagLine; // met à jour la tagline avec la valeur correspondant à l'image
-  dots.forEach(dot => dot.classList.remove("dot_selected"))// pour chaque point, exécuter fonction dot qui enlève la classe dot_selected
+  dots.forEach(dot => dot.classList.remove("dot_selected"));// pour chaque point, exécuter fonction dot qui enlève la classe dot_selected
   dots[i].classList.add('dot_selected');// ajoute la classe dot-selected à la valeur de i correspondant à l'image et à la tagline
 });
